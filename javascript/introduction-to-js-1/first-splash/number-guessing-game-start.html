@@ -21,37 +21,31 @@
         color: white;
         padding: 3px;
       }
-
-      .number {
-        border: solid;
-      }
     </style>
   </head>
 
   <body>
     <h1>Number guessing game</h1>
 
-    <p>
-      We will select some random numbers between 1 and 100. <br>
-      You can decide how many numbers to guess before the game starts.<br>
-      See if you can guess them "within 10 turns" and "within 100 seconds". <br>
-      We'll tell you if your guesses were too high or too low.<br>
-      When a number is answered correctly, the time remaining at that moment is added to the score.<br>
-      If you can't guess it "within 10 turns" or "within 100 seconds", total score is 0. <br>
-    </p>
+    <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
 
-    <label for="quantity">Number of random numbers (between 1 and 5):</label>
-    <input type="number" id="quantity" class="quantity" min="1" max="5"><br>
-    <input type="submit" value="Start game" class="startButton">
+    <input type="submit" value="Game start" class="startButton">
     
-    <div class="numbers"></div>
 
-    <input type="submit" value="Submit guess" class="guessSubmit">
+    <div class="form">
+      <label for="guessField">Enter a guess: </label><input type="text" id="guessField" class="guessField">
+      <input type="submit" value="Submit guess" class="guessSubmit">
+    </div>
+
+    <div class="resultParas">
+      <p class="guesses"></p>
+      <p class="lastResult"></p>
+      <p class="lowOrHi"></p>
+    </div>
 
     <div class="timer">
       <label for="timeLimit">Time limit: </label><span class="timeLimit">100</span>
     </div>
-    <label for="totalScore">Total score: </label><span class="totalScore"></span>
     <script src="number-guessing-game.js"></script>
   </body>
 </html>
